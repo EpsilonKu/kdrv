@@ -1,0 +1,114 @@
+/* @font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
+/* import "@fontsource/inter"; // Defaults to weight 400 */
+
+@theme {
+  --color-background: #f6edd9 ;
+  --color-highlight: #f0ece5 ;
+  --color-peach: #fcdca6;
+  --color-lemon: #fef280;
+
+  --text-primary: #000000 ;
+  --color-peige: #feese5 ;
+  --color-selection: #ffe32e;
+
+  /* Shadcn-svelte compatible variables */
+  --background: var(--color-background); /* 240 10% 3.9% */
+  --foreground: var(--text-primary); /* 240 5% 64.7% */
+
+  --card: var(--color-background); /* 0 0% 100% */
+  --card-foreground: var(--text-primary); /* 240 10% 3.9% */
+
+  --popover: var(--color-background); /* 0 0% 100% */
+  --popover-foreground: var(--text-primary); /* 240 10% 3.9% */
+
+  --primary: var(--color-peach); /* #fcdca6 */
+  --primary-foreground: var(--text-primary); /* #000000 */
+
+  --secondary: var(--bg-accent); /* #f0ece5 */
+  --secondary-foreground: var(--text-primary); /* #000000 */
+
+  --muted: var(--bg-accent); /* 240 4.8% 95.9% */
+  --muted-foreground: #707070; /* 240 3.8% 46.1% (derived, slightly lighter than pure black on light bg) */
+
+  --accent: var(--bg-accent); /* #f0ece5 */
+  --accent-foreground: var(--text-primary); /* #000000 */
+
+  --destructive: #ef4444; /* Red-500 */
+  --destructive-foreground: #ffffff; /* White */
+
+  --border: #d1d5db; /* Gray-300 */
+  --input: #d1d5db;    /* Gray-300 */
+  --ring: var(--color-lemon); /* #fef280 */
+
+  --radius: 0.5rem; /* Default, can be adjusted */
+}
+
+@layer base {
+  body {
+    @apply bg-background text-primary;
+    font-family: "Manrope";
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 text-white rounded-4xl font-medium transition-all;
+    /* bg-accent   hover:bg-highlight*/
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 border-2 rounded-4xl font-medium transition-all hover:text-white;
+    /* bg-accent   hover:bg-accent text-primary*/
+  }
+  
+  .card {
+    @apply bg-background p-6 rounded-sm text-black;
+  }
+  .card-black {
+    @apply bg-black p-6 rounded-sm text-background;
+  } 
+  .input {
+    @apply w-full px-4 py-3 rounded-sm border-background;
+    /* focus:border-highlight  focus:ring-highlight*/
+  }
+  .text-xxs {
+    font-size: 8px;
+  }
+  .text-secondary {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
