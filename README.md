@@ -1,38 +1,45 @@
-# sv
+# kdrv
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern Svelte UI component library inspired by Material 3 expressive design principles. kdrv provides a comprehensive set of beautiful, accessible, and customizable components to build stunning web applications.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- 🎨 Material 3 expressive design system
+- ⚡ Built with Svelte for optimal performance
+- ♿ Accessibility-first components
+- 🎯 TypeScript support
+- 🌙 Dark mode support
+- 📱 Responsive design
+- 🎭 Highly customizable theming
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Installation
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm install kdrv
+# or
+yarn add kdrv
+# or
+pnpm add kdrv
 ```
 
-## Building
+## Quick Start
 
-To create a production version of your app:
+```svelte
+<script>
+  import { Button } from 'kdrv';
+</script>
 
-```bash
-npm run build
+<Button variant="filled">Click me</Button>
 ```
 
-You can preview the production build with `npm run preview`.
+## Documentation
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Visit our [documentation site](https://kdrv.dev) for detailed guides, component API references, and examples.
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## License
+
+MIT © [Your Name/Organization]
