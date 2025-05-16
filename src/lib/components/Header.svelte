@@ -34,7 +34,7 @@
           class="text-xl font-bold leading-none m-auto animate-slide-in bg-black rounded-sm p-2 "
           style="animation: slideIn 0.3s ease-in-out;"
         >
-          YoYo<br>express
+          KDRV
         </div>
       {/if}
       </div>

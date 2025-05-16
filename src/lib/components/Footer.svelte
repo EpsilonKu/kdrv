@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
-        <h3 class="font-bold mb-4">ExpressUI</h3>
+        <h3 class="font-bold mb-4">kdrv</h3>
         <p class="mb-4">Beautiful UI components inspired by Material 3 Expressive.</p>
         <div class="flex space-x-4">
           <a href="https://twitter.com" aria-label="Twitter" class="hover:text-background">
@@ -55,7 +55,7 @@
     </div>
     
     <div class="mt-12 pt-8 border-t border-gray-700 text-center">
-      <p>© 2023 ExpressUI. All rights reserved.</p>
+      <p>© 2023 kdrv. All rights reserved.</p>
     </div>
   </div>
 </footer> 

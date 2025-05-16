@@ -40,7 +40,7 @@
       <!-- Left side - Text content -->
       <div class="space-y-8">
         <p class="text-xl text-secondary max-w-2xl">
-          ExpressUI brings Material 3's expressive design system to your applications with dynamic theming, fluid animations, and beautiful components.
+          kdrv brings Material 3's expressive design system to your applications with dynamic theming, fluid animations, and beautiful components.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4">

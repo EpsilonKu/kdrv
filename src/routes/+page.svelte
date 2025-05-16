@@ -4,8 +4,8 @@
 </script>
 
 <svelte:head>
-  <title>ExpressUI - Material 3 Inspired UI Library</title>
-  <meta name="description" content="ExpressUI is a beautiful, expressive UI component library inspired by Material 3 design principles." />
+  <title>kdrv - Material 3 Inspired UI Library</title>
+  <meta name="description" content="kdrv is a beautiful, expressive UI component library inspired by Material 3 design principles." />
 </svelte:head>
 
 <div class="min-h-screen flex flex-col">
@@ -15,7 +15,7 @@
     
     <section class="py-16 bg-black text-background">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Why Choose ExpressUI?</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">Why Choose kdrv?</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="card-black flex flex-col items-center text-center">
