@@ -24,9 +24,9 @@
     <div class="inline-flex items-center justify-center text-white" style="width: 8rem; height: 3rem;">
       {#if $isScrolled}
         <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" 
+          src="/images/logo/main.svg" 
           alt="Logo" 
-          class="h-12 w-12 mx-auto animate-fade-in bg-black rounded-sm p-2" 
+          class="h-14 w-14 mx-auto animate-fade-in rounded-sm" 
           style="animation: fadeIn 0.3s ease-in-out;"
         />
       {:else}
@@ -71,31 +71,31 @@
   <nav class="hidden md:flex space-x-6 justify-center w-full">
     <a 
       href="/" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'home' ? 'text-background rounded-4xl bg-black' : 'text-primary hover:text-background hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
+      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'home' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
     >
       Home
     </a>
     <a 
       href="/track" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'track' ? 'text-background rounded-4xl bg-black' : 'text-primary hover:text-background hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
+      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'track' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
     >
       Track Package
     </a>
     <a 
       href="/about" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'about' ? 'text-background rounded-4xl bg-black' : 'text-primary hover:text-background hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
+      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'about' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
     >
       About
     </a>
     <a 
       href="/contact" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'contact' ? 'text-background rounded-4xl bg-black' : 'text-primary hover:text-background hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
+      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'contact' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
     >
       Contact
     </a>
     <a 
       href="/components" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'components' ? 'text-background rounded-4xl bg-black' : 'text-primary hover:text-background hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
+      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'components' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
     >
       Components 
     </a>

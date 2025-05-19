@@ -2,25 +2,39 @@
   import { onMount } from 'svelte';
   
   let designElement;
-  let rotationDegree = 0;
-  let translateY = 0;
-  let scale = 1;
-  
-  onMount(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      rotationDegree = Math.min(scrollPosition * 0.4, 15); // Max rotation of 15 degrees
-      translateY = Math.min(scrollPosition * 0.5, 100); // Slide down by max 100px
-      scale = Math.max(1 - scrollPosition * 0.001, 0.7); // Scale down to min 70%
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
 </script>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg) scale(0.95);
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .rotating {
+    animation: rotate 20s linear infinite;
+  }
+
+  .rotating-reverse {
+    animation: rotate 15s linear infinite reverse;
+  }
+</style>
 
 <div class="relative overflow-hidden pt-4 md:pt-8 lg:pt-16">
   <!-- Background pattern -->
@@ -44,7 +58,7 @@
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/docs" class="btn text-center text-background bg-black rounded-sm">
+          <a href="/docs" class="btn text-center text-bianca bg-black rounded-sm">
             Get Started
           </a>
           <a href="/components" class="btn bg-highlight text-center text-black rounded-sm">
@@ -55,34 +69,30 @@
 
       <!-- Right side - Design elements illustration -->
       <div class="relative w-full h-[500px]">
-        <!-- Design elements with rotation, sliding and scaling effects -->
+        <!-- Design elements with continuous animations -->
         <div 
           bind:this={designElement} 
-          class="absolute inset-10 rounded-xl bg-white shadow-lg flex items-center justify-center transition-all duration-300"
-          style="transform: rotate({rotationDegree}deg) translateY({translateY}px) scale({scale})">
-          
-          <!-- Material Design Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 text-purple-600 opacity-80" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" />
-            <circle cx="12" cy="12" r="3" fill="currentColor" />
-          </svg>
+          class="absolute inset-10 rounded-xl flex items-center justify-center ">
+
+          <img 
+            src="/images/logo/main.svg" 
+            alt="kdrv logo" 
+            class="w-full h-full object-contain p-8"
+          />
 
           <!-- Design elements -->
           <div 
-            class="absolute top-0 right-0 w-64 h-64 bg-pink-500 opacity-10 rounded-2xl flex items-center justify-center transition-all duration-300"
-            style="transform: rotate({rotationDegree * -1.2 - 15}deg) ">
+            class="absolute top-0 right-0 w-64 h-64 bg-pink-500 opacity-10 rounded-4xl flex items-center justify-center rotating">
             <div class="w-40 h-40 bg-purple-400 opacity-40 rounded-xl"></div>
           </div>
           
           <div 
-            class="absolute bottom-0 left-0 w-80 h-72 bg-blue-500 opacity-10 rounded-2xl flex items-center justify-center transition-all duration-300"
-            style="transform: rotate({-rotationDegree * 1.4 + 10}deg)">
+            class="absolute bottom-0 left-0 w-80 h-72 bg-blue-500 opacity-10 rounded-4xl flex items-center justify-center rotating-reverse">
             <div class="w-48 h-12 bg-amber-500 opacity-40 rounded-lg"></div>
           </div>
           
           <div 
-            class="absolute bottom-20 right-20 w-40 h-40 bg-teal-500 opacity-10 rounded-full flex items-center justify-center transition-all duration-300"
-            style="transform: rotate({rotationDegree * 1.1}deg)">
+            class="absolute bottom-20 right-20 w-40 h-40 bg-teal-500 opacity-10 rounded-full flex items-center justify-center rotating">
           </div>
         </div>
       </div>
