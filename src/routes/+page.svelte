@@ -13,7 +13,7 @@
   <main class="flex-1">
     <Hero />
     
-    <section class="py-16 bg-black text-background">
+    <section class="py-16 bg-black text-bianca">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Why Choose kdrv?</h2>
         

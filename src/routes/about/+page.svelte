@@ -10,7 +10,7 @@
 <div class="min-h-screen flex flex-col">
   
   <main class="flex-1">
-    <section class="py-16 md:py-24 bg-background">
+    <section class="py-16 md:py-24 bg-bianca">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto mb-16 text-center">
           <h1 class="text-4xl md:text-5xl font-bold mb-6">About DeliverTrack</h1>

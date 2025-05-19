@@ -35,50 +35,83 @@
 /* import "@fontsource/inter"; // Defaults to weight 400 */
 
 @theme {
-  --color-background: #f6edd9 ;
-  --color-highlight: #f0ece5 ;
+  /* --color-background: #f6edd9 ; */
+  --color-highlight: #f0ece5;
   --color-peach: #fcdca6;
   --color-lemon: #fef280;
 
-  --text-primary: #000000 ;
-  --color-peige: #feese5 ;
+  --text-primary: #000000;
+  --color-peige: #feese5;
   --color-selection: #ffe32e;
 
+  --color-bianca: oklch(96.882% 0.01189 79.785);
+  --color-bianca-50: oklch(96.882% 0.01189 79.785);
+  --color-bianca-100: oklch(93.236% 0.02444 77.455);
+  --color-bianca-200: oklch(86.125% 0.05038 77.956);
+  --color-bianca-300: oklch(78.821% 0.07562 76.384);
+  --color-bianca-400: oklch(71.767% 0.0996 75.593);
+  --color-bianca-500: oklch(63.165% 0.10369 75.242);
+  --color-bianca-600: oklch(51.777% 0.08317 75.338);
+  --color-bianca-700: oklch(39.721% 0.06121 75.465);
+  --color-bianca-800: oklch(26.658% 0.0368 75.531);
+  --color-bianca-900: oklch(10.945% 0.01057 74.905);
+  --color-bianca-950: oklch(0% 0 none);
+
   /* Shadcn-svelte compatible variables */
-  --background: var(--color-background); /* 240 10% 3.9% */
-  --foreground: var(--text-primary); /* 240 5% 64.7% */
+  --background: var(--color-bianca);
+  /* 240 10% 3.9% */
+  --foreground: var(--text-primary);
+  /* 240 5% 64.7% */
 
-  --card: var(--color-background); /* 0 0% 100% */
-  --card-foreground: var(--text-primary); /* 240 10% 3.9% */
+  --card: var(--color-bianca);
+  /* 0 0% 100% */
+  --card-foreground: var(--text-primary);
+  /* 240 10% 3.9% */
 
-  --popover: var(--color-background); /* 0 0% 100% */
-  --popover-foreground: var(--text-primary); /* 240 10% 3.9% */
+  --popover: var(--color-bianca);
+  /* 0 0% 100% */
+  --popover-foreground: var(--text-primary);
+  /* 240 10% 3.9% */
 
-  --primary: var(--color-peach); /* #fcdca6 */
-  --primary-foreground: var(--text-primary); /* #000000 */
+  --primary: var(--color-peach);
+  /* #fcdca6 */
+  --primary-foreground: var(--text-primary);
+  /* #000000 */
 
-  --secondary: var(--bg-accent); /* #f0ece5 */
-  --secondary-foreground: var(--text-primary); /* #000000 */
+  --secondary: var(--bg-accent);
+  /* #f0ece5 */
+  --secondary-foreground: var(--text-primary);
+  /* #000000 */
 
-  --muted: var(--bg-accent); /* 240 4.8% 95.9% */
-  --muted-foreground: #707070; /* 240 3.8% 46.1% (derived, slightly lighter than pure black on light bg) */
+  --muted: var(--bg-accent);
+  /* 240 4.8% 95.9% */
+  --muted-foreground: #707070;
+  /* 240 3.8% 46.1% (derived, slightly lighter than pure black on light bg) */
 
-  --accent: var(--bg-accent); /* #f0ece5 */
-  --accent-foreground: var(--text-primary); /* #000000 */
+  --accent: var(--bg-accent);
+  /* #f0ece5 */
+  --accent-foreground: var(--text-primary);
+  /* #000000 */
 
-  --destructive: #ef4444; /* Red-500 */
-  --destructive-foreground: #ffffff; /* White */
+  --destructive: #ef4444;
+  /* Red-500 */
+  --destructive-foreground: #ffffff;
+  /* White */
 
-  --border: #d1d5db; /* Gray-300 */
-  --input: #d1d5db;    /* Gray-300 */
-  --ring: var(--color-lemon); /* #fef280 */
+  --border: #d1d5db;
+  /* Gray-300 */
+  --input: #d1d5db;
+  /* Gray-300 */
+  --ring: var(--color-lemon);
+  /* #fef280 */
 
-  --radius: 0.5rem; /* Default, can be adjusted */
+  --radius: 0.5rem;
+  /* Default, can be adjusted */
 }
 
 @layer base {
   body {
-    @apply bg-background text-primary;
+    @apply bg-bianca text-primary;
     font-family: "Manrope";
     letter-spacing: -0.02em;
   }
@@ -89,25 +122,29 @@
     @apply px-6 py-3 text-white rounded-4xl font-medium transition-all;
     /* bg-accent   hover:bg-highlight*/
   }
-  
+
   .btn-outline {
     @apply px-6 py-3 border-2 rounded-4xl font-medium transition-all hover:text-white;
     /* bg-accent   hover:bg-accent text-primary*/
   }
-  
+
   .card {
-    @apply bg-background p-6 rounded-sm text-black;
+    @apply bg-bianca p-6 rounded-sm text-black;
   }
+
   .card-black {
-    @apply bg-black p-6 rounded-sm text-background;
-  } 
+    @apply bg-black p-6 rounded-sm text-bianca;
+  }
+
   .input {
-    @apply w-full px-4 py-3 rounded-sm border-background;
+    @apply w-full px-4 py-3 rounded-sm border-bianca;
     /* focus:border-highlight  focus:ring-highlight*/
   }
+
   .text-xxs {
     font-size: 8px;
   }
+
   .text-secondary {
     color: rgba(0, 0, 0, 0.5);
   }

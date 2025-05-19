@@ -15,7 +15,7 @@
 </script>
 
 <div class="card mx-auto max-w-2xl bg-black text-white">
-	<p class="text-background mb-6">
+	<p class="text-bianca mb-6">
 		Enter your tracking number to get real-time updates on your delivery.
 	</p>
 
@@ -34,7 +34,7 @@
 					/>
 					<label
 						for="tracking"
-						class="bg-background absolute left-3 top-1/2 -translate-y-1/2 rounded-md p-1 text-xs font-medium text-black transition-all duration-300 peer-placeholder-shown:top-1/2 peer-focus:opacity-0 peer-focus:blur-xl"
+						class="bg-bianca absolute left-3 top-1/2 -translate-y-1/2 rounded-md p-1 text-xs font-medium text-black transition-all duration-300 peer-placeholder-shown:top-1/2 peer-focus:opacity-0 peer-focus:blur-xl"
 						>NUMBER</label
 					>
 				</div>
