@@ -1,16 +1,29 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	let trackingNumber = '';
-	let isLoading = false;
 
 	function handleSubmit() {
 		if (!trackingNumber) return;
 
-		isLoading = true;
-		// Simulate API call
-		setTimeout(() => {
-			isLoading = false;
-			window.location.href = `/track/${trackingNumber}`;
-		}, 1000);
+		goto(`/track/${trackingNumber}`);
+
+		// TODO: Implement actual API call to validate tracking number 
+		// and fetch initial data or handle errors before navigation.
+		// For now, we navigate directly.
+		// Example:
+		// try {
+		//   const response = await fetch(`/api/tracking/check/${trackingNumber}`);
+		//   if (response.ok) {
+		//     goto(`/track/${trackingNumber}`);
+		//   } else {
+		//     // Handle error, e.g., display a message
+		//     console.error("Invalid tracking number or API error");
+		//   }
+		// } catch (error) {
+		//   console.error("API request failed", error);
+		// } finally {
+		//   // isLoading = false; // Re-enable if you add actual loading state
+		// }
 	}
 </script>
 
@@ -41,14 +54,8 @@
 				<button
 					type="submit"
 					class="btn bg-selection text-black hover:-translate-y-1 transition-transform duration-200"
-					on:click={handleSubmit}
-					disabled={isLoading}
 				>
-					{#if isLoading}
-						<span>Searching...</span>
-					{:else}
-						<span>Track Package</span>
-					{/if}
+					<span>Track Package</span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="mr-1 inline-block h-5 w-5"

@@ -1,50 +1,7 @@
 <script lang="ts">
-  let { trackingNumber } = $props();
-  
-  // Mock data for the package
-  const packageData = {
-    status: 'In Transit',
-    estimatedDelivery: 'June 15, 2023',
-    origin: 'Berlin, Germany',
-    destination: 'Munich, Germany',
-    updates: [
-      { 
-        status: 'Package picked up', 
-        location: 'Berlin Warehouse', 
-        date: 'June 10, 2023',
-        time: '09:15 AM',
-        completed: true 
-      },
-      { 
-        status: 'Package in transit', 
-        location: 'Berlin Sorting Facility', 
-        date: 'June 11, 2023',
-        time: '02:30 PM',
-        completed: true 
-      },
-      { 
-        status: 'Package in delivery vehicle', 
-        location: 'Munich Distribution Center', 
-        date: 'June 12, 2023',
-        time: '10:45 AM',
-        completed: true 
-      },
-      { 
-        status: 'Out for delivery', 
-        location: 'Munich', 
-        date: 'June 13, 2023',
-        time: '08:20 AM',
-        completed: false 
-      },
-      { 
-        status: 'Delivered', 
-        location: 'Munich', 
-        date: 'June 15, 2023',
-        time: 'Pending',
-        completed: false 
-      }
-    ]
-  };
+  let { trackingNumber, packageInfo } = $props<{ trackingNumber: string, packageInfo: any }>();
+  // Define types for packageInfo more specifically if available, 
+  // or use a general type like 'any' or a custom interface for now.
 </script>
 
 <div class="max-w-4xl mx-auto">
@@ -58,19 +15,19 @@
         <p class="text-sm text-secondary">Status</p>
         <div class="flex items-center">
           <span class="mr-2 w-3 h-3 rounded-full border border-black"></span>
-          <span class="text-lg font-bold">{packageData.status}</span>
+          <span class="text-lg font-bold">{packageInfo.status}</span>
         </div>
       </div>
       <div>
         <p class="text-sm text-secondary">Estimated Delivery</p>
-        <p class="text-lg font-bold  ">{packageData.estimatedDelivery}</p>
+        <p class="text-lg font-bold  ">{packageInfo.estimatedDelivery}</p>
       </div>
     </div>
     
     <div class="relative flex justify-between items-center py-4">
       <div class="text-left">
         <p class="text-sm text-secondary mb-1">From</p>
-        <p class="text-lg font-bold">{packageData.origin}</p>
+        <p class="text-lg font-bold">{packageInfo.origin}</p>
       </div>
       
       <div class="w-full">
@@ -79,7 +36,7 @@
       
       <div class="text-right">
         <p class="text-sm text-secondary mb-1">To</p>
-        <p class="text-lg font-bold">{packageData.destination}</p>
+        <p class="text-lg font-bold">{packageInfo.destination}</p>
       </div>
     </div>
   </div>
@@ -88,7 +45,7 @@
     <h3 class="text-xl font-bold mb-6">Tracking History</h3>
     
     <div class="space-y-8">
-      {#each packageData.updates as update, idx}
+      {#each packageInfo.updates as update, idx}
         <div class="flex">
           <div class="mr-4 relative flex flex-col items-center">
             <div class={`w-6 h-6 rounded-full flex items-center justify-center border ${update.completed ? 'border-black' : 'border-black opacity-50'}`}>
@@ -100,8 +57,8 @@
                 <div class="w-2 h-2 rounded-full border border-black opacity-50"></div>
               {/if}
             </div>
-            {#if idx < packageData.updates.length - 1}
-              <div class={`h-full w-0.5 ${packageData.updates[idx + 1].completed ? 'border-r border-black' : 'border-r border-black opacity-50'}`}></div>
+            {#if idx < packageInfo.updates.length - 1}
+              <div class={`h-full w-0.5 ${packageInfo.updates[idx + 1].completed ? 'border-r border-black' : 'border-r border-black opacity-50'}`}></div>
             {/if}
           </div>
           

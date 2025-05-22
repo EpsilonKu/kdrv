@@ -1,11 +1,13 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import Header from '$lib/components/Header.svelte';
   import PackageDetails from '$lib/components/PackageDetails.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  
-  // Get the tracking ID from the URL
-  $: trackingId = $page.params.id;
+  import type { PageData } from './$types'; // Import PageData type
+
+  export let data: PageData; // Receive data from load function
+
+  // Extract packageInfo and trackingId from the data prop
+  $: ({ packageInfo, trackingId } = data.props);
 </script>
 
 <svelte:head>
@@ -23,7 +25,7 @@
         <p class="text-xl text-secondary">Here's the latest information about your package</p>
       </div>
       
-      <PackageDetails trackingNumber={trackingId} />
+      <PackageDetails packageInfo={packageInfo} trackingNumber={trackingId} />
       
       <div class="mt-12 text-center">
         <a href="/track" class="btn text-black bg-selection inline-flex items-center justify-center hover:-translate-y-1 transition-transform duration-200">
