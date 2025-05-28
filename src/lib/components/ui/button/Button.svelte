@@ -1,14 +1,18 @@
 <script lang="ts">
-  import { cn } from "$lib/utils";
+  import { cn } from "../../../../lib/utils";
   import type { HTMLButtonAttributes } from "svelte/elements";
 
+  type ButtonVariant = "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  type ButtonSize = "default" | "sm" | "lg" | "icon";
+
   interface $$Props extends HTMLButtonAttributes {
-    variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
-    size?: "default" | "sm" | "lg" | "icon";
+    variant?: ButtonVariant;
+    size?: ButtonSize;
+    class?: string;
   }
 
-  export let variant: $$Props["variant"] = "default";
-  export let size: $$Props["size"] = "default";
+  export let variant: ButtonVariant = "default";
+  export let size: ButtonSize = "default";
 
   // Basic button styling, you'll customize this with your delivery site's theme
   // This is a simplified version of shadcn-svelte button styles
@@ -42,8 +46,8 @@
 <button
   class={cn(
     buttonVariants.base,
-    buttonVariants.variants.variant[variant],
-    buttonVariants.variants.size[size],
+    variant ? buttonVariants.variants.variant[variant] : "",
+    size ? buttonVariants.variants.size[size] : "",
     className
   )}
   {...$$restProps}

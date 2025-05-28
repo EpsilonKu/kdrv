@@ -1,45 +1,83 @@
-# kdrv
+# KDRV UI
 
-A modern Svelte UI component library inspired by Material 3 expressive design principles. kdrv provides a comprehensive set of beautiful, accessible, and customizable components to build stunning web applications.
-
-## Features
-
-- 🎨 Material 3 expressive design system
-- ⚡ Built with Svelte for optimal performance
-- ♿ Accessibility-first components
-- 🎯 TypeScript support
-- 🌙 Dark mode support
-- 📱 Responsive design
-- 🎭 Highly customizable theming
+A Svelte UI component library built with Tailwind CSS.
 
 ## Installation
 
 ```bash
-npm install kdrv
-# or
-yarn add kdrv
-# or
-pnpm add kdrv
+npm install kdrv-ui
 ```
 
-## Quick Start
+## Usage
+
+### Importing Components
 
 ```svelte
 <script>
-  import { Button } from 'kdrv';
+  import { Button } from 'kdrv-ui';
 </script>
 
-<Button variant="filled">Click me</Button>
+<Button>Click me</Button>
 ```
 
-## Documentation
+### Importing Styles
 
-Visit our [documentation site](https://kdrv.dev) for detailed guides, component API references, and examples.
+You can import the styles in your main layout file or entry point:
+
+```svelte
+<script>
+  import 'kdrv-ui/styles.css';
+</script>
+```
+
+### Available Components
+
+The library exports the following components:
+
+- UI Components
+  - `Button` - A customizable button component
+
+Additional components are in development:
+- Layout components (Header, Footer, Hero, Divider)
+- Functional components (TrackingSearch, PackageDetails)
+
+## Development
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Start Storybook
+npm run storybook
+```
+
+### Building the Library
+
+```bash
+# Build the library
+npm run build:lib
+```
+
+### Testing
+
+```bash
+# Run tests
+npm run test
+```
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+To add new components:
+
+1. Create your component in `src/lib/components/ui/[component-name]/`
+2. Add an `index.ts` file to export your component
+3. Update the main exports in `src/lib/index.ts`
 
 ## License
 
-MIT © [Your Name/Organization]
+MIT
