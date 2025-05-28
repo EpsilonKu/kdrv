@@ -1,83 +1,65 @@
-# KDRV UI
+# kdrv - Modern UI Component Library
 
-A Svelte UI component library built with Tailwind CSS.
+A beautiful, expressive UI component library inspired by Material 3 design principles for Svelte applications.
 
-## Installation
+## Features
+
+- 🎨 **Material 3 Design** - Components following Google's latest design principles
+- ⚡ **High Performance** - Optimized for speed with minimal bundle size
+- 🔧 **TypeScript Ready** - Fully typed components with excellent IDE support
+- ♿ **Accessibility First** - Built with WCAG 2.1 AA compliance in mind
+- 🎯 **Developer Friendly** - Extensive documentation and customization options
+
+## Quick Start
 
 ```bash
-npm install kdrv-ui
+npm install @kdrv/svelte
 ```
 
-## Usage
-
-### Importing Components
+```typescript
+import { Button, Card } from '@kdrv/svelte';
+```
 
 ```svelte
-<script>
-  import { Button } from 'kdrv-ui';
-</script>
-
-<Button>Click me</Button>
+<Button variant="default">Click me</Button>
 ```
 
-### Importing Styles
+## Pages
 
-You can import the styles in your main layout file or entry point:
+- **Home** (`/`) - Landing page showcasing kdrv
+- **Documentation** (`/docs`) - Complete documentation and guides
+- **Components** (`/components`) - Live component examples and demos
+- **About** (`/about`) - Learn about kdrv's mission and design philosophy
+- **Contact** (`/contact`) - Get help and support
 
-```svelte
-<script>
-  import 'kdrv-ui/styles.css';
-</script>
-```
+## Component Categories
 
-### Available Components
+### Actions
+- Button - Interactive buttons with multiple variants
 
-The library exports the following components:
+### Layout
+- Card - Flexible containers for grouping content
 
-- UI Components
-  - `Button` - A customizable button component
+### Feedback
+- Alert - Display important messages and notifications
 
-Additional components are in development:
-- Layout components (Header, Footer, Hero, Divider)
-- Functional components (TrackingSearch, PackageDetails)
+### Data Display
+- Badge - Small status indicators and labels
+- Avatar - User profile pictures and initials
 
 ## Development
 
-### Setup
-
 ```bash
-# Install dependencies
-npm install
-
 # Start development server
 npm run dev
 
-# Start Storybook
-npm run storybook
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
-
-### Building the Library
-
-```bash
-# Build the library
-npm run build:lib
-```
-
-### Testing
-
-```bash
-# Run tests
-npm run test
-```
-
-## Contributing
-
-To add new components:
-
-1. Create your component in `src/lib/components/ui/[component-name]/`
-2. Add an `index.ts` file to export your component
-3. Update the main exports in `src/lib/index.ts`
 
 ## License
 
-MIT
+MIT License - see LICENSE file for details.

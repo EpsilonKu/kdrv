@@ -76,10 +76,10 @@
       Home
     </a>
     <a 
-      href="/track" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'track' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
+      href="/docs" 
+      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'docs' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
     >
-      Track Package
+      Documentation
     </a>
     <a 
       href="/about" 

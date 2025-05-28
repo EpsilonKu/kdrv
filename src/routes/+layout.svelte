@@ -1,5 +1,5 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
@@ -14,7 +14,7 @@
 	
 	function getActivePage(path: string): string {
 		if (path === '/') return 'home';
-		if (path.startsWith('/track')) return 'track';
+		if (path.startsWith('/docs')) return 'docs';
 		if (path.startsWith('/about')) return 'about';
 		if (path.startsWith('/contact')) return 'contact';
 		if (path.startsWith('/components')) return 'components';

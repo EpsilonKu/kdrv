@@ -1,104 +1,162 @@
 <script lang="ts">
-  // Components with images and descriptions
-  const components = [
-    { 
-      name: "Button", 
-      path: "/components/button",
-      description: "Buttons help people initiate actions and make choices",
-      image: "/images/components/button-placeholder.svg" 
+  import Footer from '$lib/components/Footer.svelte';
+  import { Button } from '$lib/components/ui/button';
+  
+  // Component categories with examples
+  const componentExamples = [
+    {
+      category: 'Actions',
+      components: [
+        {
+          name: 'Button',
+          description: 'Interactive buttons with multiple variants',
+          component: 'button'
+        }
+      ]
     },
-    { 
-      name: "Alert", 
-      path: "/components/alert",
-      description: "Alerts display brief messages for user notification",
-      image: "/images/components/alert-placeholder.svg" 
+    {
+      category: 'Layout',
+      components: [
+        {
+          name: 'Card',
+          description: 'Flexible containers for grouping content',
+          component: 'card'
+        }
+      ]
     },
-    { 
-      name: "Alert Dialog", 
-      path: "/components/alert-dialog",
-      description: "Alert dialogs require attention and confirmation",
-      image: "/images/components/alert-dialog-placeholder.svg" 
+    {
+      category: 'Feedback',
+      components: [
+        {
+          name: 'Alert',
+          description: 'Display important messages and notifications',
+          component: 'alert'
+        }
+      ]
     },
-    { 
-      name: "Badge", 
-      path: "/components/badge",
-      description: "Badges show notifications or item counts",
-      image: "/images/components/badge-placeholder.svg" 
-    },
-    { 
-      name: "Card", 
-      path: "/components/card",
-      description: "Cards contain content and actions about a single subject",
-      image: "/images/components/card-placeholder.svg" 
-    },
-    { 
-      name: "Input", 
-      path: "/components/input",
-      description: "Inputs allow users to enter and edit text",
-      image: "/images/components/input-placeholder.svg" 
-    },
-    { 
-      name: "Label", 
-      path: "/components/label",
-      description: "Labels describe the associated input elements",
-      image: "/images/components/label-placeholder.svg" 
-    },
-    { 
-      name: "Select", 
-      path: "/components/select",
-      description: "Select menus display a list of choices on a surface",
-      image: "/images/components/select-placeholder.svg" 
-    },
-    { 
-      name: "Textarea", 
-      path: "/components/textarea",
-      description: "Textareas allow for multi-line text input",
-      image: "/images/components/textarea-placeholder.svg" 
-    },
-    { 
-      name: "Avatar", 
-      path: "/components/avatar",
-      description: "Avatars represent people with images or initials",
-      image: "/images/components/avatar-placeholder.svg" 
-    },
+    {
+      category: 'Data Display',
+      components: [
+        {
+          name: 'Badge',
+          description: 'Small status indicators and labels',
+          component: 'badge'
+        },
+        {
+          name: 'Avatar',
+          description: 'User profile pictures and initials',
+          component: 'avatar'
+        }
+      ]
+    }
   ];
 </script>
 
 <svelte:head>
-  <title>Component Library</title>
+  <title>Components | kdrv UI Library</title>
+  <meta name="description" content="Explore all the beautiful UI components in the kdrv library. See live examples and learn how to use each component." />
 </svelte:head>
 
-<div class="container mx-auto px-4 py-12">
-  <h1 class="text-4xl font-bold mb-2">Components</h1>
-  <p class="text-lg mb-8">Building blocks for creating consistent, accessible interfaces</p>
-
-  {#if components.length > 0}
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      {#each components as component}
-        <a 
-          href={component.path}
-          class="bg-black text-highlight flex flex-col group rounded-xl overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg"
-        >
-          <div class="text-hightlight aspect-[4/3] flex items-center justify-center overflow-hidden">
-            <div class="w-full h-full flex items-center justify-center bg-selection">
-              <!-- Image placeholder -->
-              <div class="text-black text-center text-sm">
-                Image placeholder
+<div class="min-h-screen flex flex-col">
+  
+  <main class="flex-1 py-12 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto mb-16 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Component Library</h1>
+        <p class="text-xl">Explore our collection of beautiful, accessible UI components</p>
+      </div>
+      
+      <!-- Live Examples Section -->
+      <section class="mb-16">
+        <div class="card">
+          <h2 class="text-3xl font-bold mb-8">Live Examples</h2>
+          <p class="text-lg mb-8">See our components in action</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Button Examples -->
+            <div class="space-y-4">
+              <h3 class="font-bold text-lg">Buttons</h3>
+              <div class="space-y-2">
+                <Button variant="default">Default Button</Button>
+                <Button variant="outline">Outlined Button</Button>
+                <Button variant="ghost">Ghost Button</Button>
+              </div>
+            </div>
+            
+            <!-- Other components would be added here when they're available -->
+            <div class="space-y-4">
+              <h3 class="font-bold text-lg">Cards</h3>
+              <div class="p-4 bg-white rounded-lg shadow-md border">
+                <h4 class="font-semibold mb-2">Sample Card</h4>
+                <p class="text-sm text-gray-600">This is an example of a card component with some content.</p>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <h3 class="font-bold text-lg">Badges</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Default</span>
+                <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Secondary</span>
+                <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-sm">Success</span>
+                <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-sm">Danger</span>
               </div>
             </div>
           </div>
-          <div class="p-4 border-t border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-medium mb-1">{component.name}</h2>
-            <p class="text-sm ">{component.description}</p>
+        </div>
+      </section>
+      
+      <!-- Component Categories -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-center">All Components</h2>
+        
+        <div class="space-y-8">
+          {#each componentExamples as category}
+            <div class="card">
+              <h3 class="text-2xl font-bold mb-6">{category.category}</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {#each category.components as component}
+                  <a 
+                    href="/components/{component.component}" 
+                    class="block p-6 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors group"
+                  >
+                    <h4 class="font-bold text-lg mb-2 group-hover:text-highlight">{component.name}</h4>
+                    <p class="text-gray-600">{component.description}</p>
+                    
+                    <div class="mt-4 flex items-center text-sm text-highlight">
+                      <span>View examples</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                  </a>
+                {/each}
+              </div>
+            </div>
+          {/each}
+        </div>
+      </section>
+      
+      <!-- Call to Action -->
+      <section class="text-center">
+        <div class="card bg-black text-bianca">
+          <h2 class="text-3xl font-bold mb-6">Ready to start building?</h2>
+          <p class="text-lg mb-8">Get started with kdrv and create beautiful applications.</p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/docs" class="btn bg-bianca text-black hover:bg-gray-100">
+              Get Started
+            </a>
+            <a href="https://github.com/kdrv-team/kdrv" class="btn border border-bianca text-bianca hover:bg-bianca hover:text-black">
+              View on GitHub
+            </a>
           </div>
-        </a>
-      {/each}
+        </div>
+      </section>
     </div>
-  {:else}
-    <p class="text-xl text-gray-600 dark:text-gray-400">
-      No components available yet. Stay tuned!
-    </p>
-  {/if}
+  </main>
+  
+  <Footer />
 </div>
 
 <style lang="postcss">
