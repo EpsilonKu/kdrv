@@ -1,6 +1,27 @@
 <script lang="ts">
   import Footer from '$lib/components/Footer.svelte';
-  import { Button } from '$lib/components/ui/button';
+  import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
+  
+  let Button: any = null;
+  let Card: any = null;
+  let CardHeader: any = null;
+  let CardContent: any = null;
+  let CardTitle: any = null;
+  let Badge: any = null;
+  
+  // Load UI components only on client side to avoid SSR issues
+  onMount(async () => {
+    if (browser) {
+      const module = await import('@kdrv/ui');
+      Button = module.Button;
+      Card = module.Card;
+      CardHeader = module.CardHeader;
+      CardContent = module.CardContent;
+      CardTitle = module.CardTitle;
+      Badge = module.Badge;
+    }
+  });
   
   // Component categories with examples
   const componentExamples = [
@@ -77,9 +98,16 @@
             <div class="space-y-4">
               <h3 class="font-bold text-lg">Buttons</h3>
               <div class="space-y-2">
-                <Button variant="default">Default Button</Button>
-                <Button variant="outline">Outlined Button</Button>
-                <Button variant="ghost">Ghost Button</Button>
+                {#if Button}
+                  <svelte:component this={Button} variant="default">Default Button</svelte:component>
+                  <svelte:component this={Button} variant="outline">Outlined Button</svelte:component>
+                  <svelte:component this={Button} variant="ghost">Ghost Button</svelte:component>
+                {:else}
+                  <!-- Fallback buttons while loading -->
+                  <button class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-10 py-2 px-4">Default Button</button>
+                  <button class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4">Outlined Button</button>
+                  <button class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4">Ghost Button</button>
+                {/if}
               </div>
             </div>
             

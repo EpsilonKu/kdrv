@@ -1,10 +1,13 @@
 // place files you want to import through the `$lib` alias in this folder.
 
-// Export UI components
-export * from './components/ui/button';
+// Export UI components from the library
+export * from '@kdrv/ui';
 
-// Export utility functions
-export * from './utils';
+// Export utility functions from the library
+// export * from '@kdrv/ui/utils'; // This is already included in the main export
+
+// Re-export everything from the library for convenience
+// This allows the web app to use $lib imports while actually using the library
 
 // These components need to be created or paths updated
 // Comment out exports for missing components until they're created

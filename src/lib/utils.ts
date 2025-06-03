@@ -1,17 +1,9 @@
-/**
- * Utility functions for KDRV UI components
- */
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 /**
- * Combines multiple class names into a single string
+ * Combines class names with Tailwind CSS class merging
  */
-export function cn(...classes: (string | undefined | null | false)[]): string {
-  return classes.filter(Boolean).join(' ');
-}
-
-/**
- * Creates a unique ID
- */
-export function generateId(): string {
-  return Math.random().toString(36).substring(2, 9);
+export function cn(...inputs: (string | undefined | null | false)[]): string {
+  return twMerge(clsx(inputs));
 } 

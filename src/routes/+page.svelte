@@ -50,35 +50,6 @@
         </div>
       </div>
     </section>
-
-    <section class="py-16 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Powerful Features</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold mb-3">Dynamic Theming</h3>
-            <p class="mb-4">Create custom themes with our color system that adapts to light and dark modes automatically.</p>
-            <div class="flex gap-2 mt-4">
-              <div class="w-8 h-8 bg-blue-500 rounded-full"></div>
-              <div class="w-8 h-8 bg-pink-500 rounded-full"></div>
-              <div class="w-8 h-8 bg-purple-500 rounded-full"></div>
-              <div class="w-8 h-8 bg-amber-500 rounded-full"></div>
-              <div class="w-8 h-8 bg-teal-500 rounded-full"></div>
-            </div>
-          </div>
-          
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-bold mb-3">Motion and Animation</h3>
-            <p class="mb-4">Fluid transitions and micro-interactions that bring your UI to life following Material 3 motion principles.</p>
-            <div class="h-8 bg-gray-200 rounded-full overflow-hidden">
-              <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full w-2/3 rounded-full"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  
+  </main> 
   <Footer />
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, ButtonGroups } from "$lib/components/ui/button";
+  import { Button, ButtonGroups } from "@kdrv/ui";
 </script>
 
 <svelte:head>

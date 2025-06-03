@@ -5,6 +5,15 @@
   import { onMount, onDestroy } from 'svelte';
   import { writable } from 'svelte/store';
 
+  // Navigation items
+  const navItems = [
+    { href: '/', label: 'Home', key: 'home' },
+    { href: '/docs', label: 'Documentation', key: 'docs' },
+    { href: '/about', label: 'About', key: 'about' },
+    { href: '/contact', label: 'Contact', key: 'contact' },
+    { href: '/components', label: 'Components', key: 'components' }
+  ];
+
   // Store to track if the page is scrolled
   const isScrolled = writable(false);
 
@@ -68,37 +77,15 @@
     </style>
   </div>
   
-  <nav class="hidden md:flex space-x-6 justify-center w-full">
-    <a 
-      href="/" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'home' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
-    >
-      Home
-    </a>
-    <a 
-      href="/docs" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'docs' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
-    >
-      Documentation
-    </a>
-    <a 
-      href="/about" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'about' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
-    >
-      About
-    </a>
-    <a 
-      href="/contact" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'contact' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
-    >
-      Contact
-    </a>
-    <a 
-      href="/components" 
-      class={`font-medium px-4 py-2 transition-all duration-300 ease-in-out hover:translate-y-[-2px] hover:shadow-lg ${activePage === 'components' ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
-    >
-      Components 
-    </a>
+  <nav class="hidden md:flex space-x-1 justify-center w-full ">
+    {#each navItems as item}
+      <a 
+        href={item.href}
+        class={`font-medium  px-4 py-2 transition-all duration-300 ease-in-out hover:shadow-lg  first:rounded-l-4xl last:rounded-r-4xl ${activePage === item.key ? 'text-bianca rounded-4xl bg-black' : 'text-primary hover:text-bianca hover:bg-black hover:rounded-4xl rounded-xs bg-highlight'}`}
+      >
+        {item.label}
+      </a>
+    {/each}
   </nav>
   
   <div class="md:hidden flex justify-end w-full mt-2 md:mt-0">
